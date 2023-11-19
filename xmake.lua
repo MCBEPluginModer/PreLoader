@@ -4,7 +4,7 @@ add_repositories("liteldev-repo https://github.com/LiteLDev/xmake-repo.git")
 
 if not has_config("vs_runtime") then
     if is_mode("debug") then
-        set_runtimes("MDd")
+        set_runtimes("MD")
     else
         set_runtimes("MD")
     end
@@ -21,7 +21,7 @@ add_requires("demangler v2.0.0")
 target("PreLoader")
     set_kind("shared")
     set_languages("c++17")
-    set_symbols("debug")
+    set_symbols("release")
     add_headerfiles("src/(**.h)")
     add_includedirs("./src")
     add_defines("PRELOADER_EXPORT", "UNICODE")
